@@ -2,12 +2,8 @@
 #    uv pip compile --refresh --all-extras pyproject.toml -o requirements.txt
 annotated-types==0.7.0
     # via pydantic
-appnope==0.1.4
-    # via ipykernel
 asttokens==2.4.1
     # via stack-data
-black==24.8.0
-    # via e84-geoai-common (pyproject.toml)
 boto3==1.35.20
     # via e84-geoai-common (pyproject.toml)
 boto3-stubs==1.35.20
@@ -28,8 +24,6 @@ cfgv==3.4.0
     # via pre-commit
 charset-normalizer==3.3.2
     # via requests
-click==8.1.7
-    # via black
 comm==0.2.2
     # via ipykernel
 debugpy==1.8.5
@@ -38,10 +32,6 @@ decorator==5.1.1
     # via ipython
 distlib==0.3.8
     # via virtualenv
-exceptiongroup==1.2.2
-    # via
-    #   ipython
-    #   pytest
 executing==2.1.0
     # via stack-data
 filelock==3.16.1
@@ -82,8 +72,6 @@ matplotlib-inline==0.1.7
     #   ipython
 mypy-boto3-bedrock-runtime==1.35.9
     # via boto3-stubs
-mypy-extensions==1.0.0
-    # via black
 nest-asyncio==1.6.0
     # via ipykernel
 nodeenv==1.9.1
@@ -97,19 +85,15 @@ numpy==2.0.2
     #   types-shapely
 packaging==24.1
     # via
-    #   black
     #   build
     #   ipykernel
     #   pytest
 parso==0.8.4
     # via jedi
-pathspec==0.12.1
-    # via black
 pexpect==4.9.0
     # via ipython
 platformdirs==4.3.3
     # via
-    #   black
     #   jupyter-core
     #   virtualenv
 pluggy==1.5.0
@@ -154,6 +138,8 @@ ruamel-yaml==0.18.6
     # via pre-commit-hooks
 ruamel-yaml-clib==0.2.8
     # via ruamel-yaml
+ruff==0.6.8
+    # via e84-geoai-common (pyproject.toml)
 s3transfer==0.10.2
     # via boto3
 shapely==2.0.6
@@ -164,12 +150,6 @@ six==1.16.0
     #   python-dateutil
 stack-data==0.6.3
     # via ipython
-tomli==2.0.1
-    # via
-    #   black
-    #   build
-    #   pre-commit-hooks
-    #   pytest
 tornado==6.4.1
     # via
     #   ipykernel
@@ -190,10 +170,6 @@ types-shapely==2.0.0.20240820
     # via e84-geoai-common (pyproject.toml)
 typing-extensions==4.12.2
     # via
-    #   black
-    #   boto3-stubs
-    #   ipython
-    #   mypy-boto3-bedrock-runtime
     #   pydantic
     #   pydantic-core
 urllib3==2.2.3
