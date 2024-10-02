@@ -16,7 +16,7 @@ dependencies = [
   "boto3-stubs[bedrock-runtime]>=1.35.20",
   "pydantic>=2.9.1",
   "shapely>=2.0.6",
-  "types-shapely>=2.0.0.20240820"
+  "types-shapely>=2.0.0.20240820",
 ]
 dynamic = ["version"]
 
@@ -24,23 +24,80 @@ dynamic = ["version"]
 
 [tool.pytest.ini_options]
 pythonpath = "src"
-testpaths=[
-  "tests"
-]
+testpaths = ["tests"]
 
 [project.urls]
 Github = "https://github.com/Element84/e84-geoai-common"
 
 [project.optional-dependencies]
-debugging = [
-    "folium>=0.17.0"
-]
+debugging = ["folium>=0.17.0"]
 dev = [
   "pytest>=8.3.3",
   "ipykernel>=6.29.5",
-  "black>=24.8.0",
+  "ruff>=0.6.8",
   "pyright>=1.1.381",
   "build>=1.2.2",
   "pre-commit>=3.8.0",
-  "pre-commit-hooks>=4.6.0"
+  "pre-commit-hooks>=4.6.0",
 ]
+
+[tool.ruff.lint]
+#//docs.astral.sh/ruff/rules/
+select = [
+  # Pyflakes rules
+  'B',
+  # Flake8: Bugbear linting rules (extended)
+  'BLE',
+  # Complex comprehensions (C4xx series)
+  'C4',
+  # Flake8: Miscellaneous complexity rules (C9xx series)
+  'C90',
+  # Ambiguous variable names (e.g., 'l', 'O', or 'I')
+  'COM',
+  # Use of datetime.now() without timezone (DST issues)
+  'DTZ',
+  # PEP8: Style guide enforcement for Python code (E series)
+  'E',
+  # Flake8: Error-prone regular expressions
+  'ERA',
+  # Pyflakes: Checking for common Python errors
+  'F',
+  # Future annotations checks (Python 3.7+)
+  'FA',
+  # Flake8: Type hints rules (G series)
+  'G',
+  # Import sorting (PEP8 guidelines)
+  'I',
+  # Use of input() in non-interactive environments
+  'INP',
+  # Naming conventions (Flake8)
+  'N',
+  # NumPy style guide enforcement
+  'NPY',
+  # Pathlib rules (encourage use over os.path)
+  'PT',
+  # Flake8: Prefer Pathlib over string paths
+  'PTH',
+  # Redundant return statements
+  'RET',
+  # Ruff-specific rules (general cleanup)
+  'RUF',
+  # PEP8: String formatting rules (e.g., f-strings)
+  'S',
+  # Avoid unnecessary comparisons to literals or self
+  'SIM',
+  # Flake8: Top-level test functions (T201+ series)
+  'T20',
+  # Pyupgrade: Upgrade Python syntax automatically
+  'UP',
+  # PEP8: Warnings (Whitespace issues, W series)
+  'W',
+]
+
+
+[tool.ruff.lint.per-file-ignores]
+'__init__.py' = ['E402']
+'tests/**/*' = ['S101']
+
+[tool.ruff.lint.isort]
+lines-between-types = 1
